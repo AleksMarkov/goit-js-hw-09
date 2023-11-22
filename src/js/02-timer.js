@@ -42,16 +42,16 @@ function onClick() {
   };
   id = setInterval(() => {
     today = new Date().getTime();
-    interval = alarm - today;
-    timeCount = convertMs(interval);
-    days.textContent = timeCount.days;
-    hours.textContent = timeCount.hours;
-    minutes.textContent = timeCount.minutes;
-    seconds.textContent = timeCount.seconds;
-    if (interval < 1000) {
+    if (alarm - today < 1000) {
       clearInterval(id);
     } else {
       today += 1000;
+      interval = alarm - today;
+      timeCount = convertMs(interval);
+      days.textContent = timeCount.days;
+      hours.textContent = timeCount.hours;
+      minutes.textContent = timeCount.minutes;
+      seconds.textContent = timeCount.seconds;
     }
   }, 1000);
 }

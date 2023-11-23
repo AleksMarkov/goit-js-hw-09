@@ -8,14 +8,14 @@ const days = document.querySelector('[data-days]');
 const hours = document.querySelector('[data-hours]');
 const minutes = document.querySelector('[data-minutes]');
 const seconds = document.querySelector('[data-seconds]');
-button.addEventListener('click', onClick);
-button.setAttribute('disabled', 'true');
 
 let today = null;
 let alarm = null;
 let id = null;
 let interval = 0;
 let timeCount = { days: 0, hours: 0, minutes: 0, seconds: 0 };
+button.addEventListener('click', onClick);
+button.setAttribute('disabled', 'true');
 
 flatpickr(input, {
   enableTime: true,
@@ -35,12 +35,6 @@ flatpickr(input, {
 });
 
 function onClick() {
-  // timeCount = {
-  //   days: 0,
-  //   hours: 0,
-  //   minutes: 0,
-  //   seconds: 0,
-  // };
   id = setInterval(() => {
     today = new Date().getTime();
     if (alarm - today < 1000) {

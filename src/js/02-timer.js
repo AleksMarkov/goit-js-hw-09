@@ -15,6 +15,7 @@ let today = null;
 let alarm = null;
 let id = null;
 let interval = 0;
+let timeCount = { days: 0, hours: 0, minutes: 0, seconds: 0 };
 
 flatpickr(input, {
   enableTime: true,
@@ -34,12 +35,12 @@ flatpickr(input, {
 });
 
 function onClick() {
-  timeCount = {
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0,
-  };
+  // timeCount = {
+  //   days: 0,
+  //   hours: 0,
+  //   minutes: 0,
+  //   seconds: 0,
+  // };
   id = setInterval(() => {
     today = new Date().getTime();
     if (alarm - today < 1000) {
